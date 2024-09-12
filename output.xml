@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.5 on darwin)" generated="20240906 20:49:53.892" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.5 on darwin)" generated="20240912 11:46:31.761" rpa="false" schemaversion="3">
 <suite id="s1" name="Test 1" source="/Users/robbydarmawan/Documents/Automation/Robot-Framework-Custom/tests/Test_1.robot">
 <test id="s1-t1" name="TC001 - GET DATA TESTING" line="9">
 <kw name="GET DATA TEST 1" library="fungsional_1">
@@ -10,289 +10,107 @@
 <arg>${DESKRIPSI}</arg>
 <arg>${TCID}</arg>
 <arg>${SHEET_NAMES}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>GET DATA FROM : ${SHEET_DATA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240912 11:46:32.329" level="INFO">GET DATA FROM : Data_1</msg>
+<status status="PASS" starttime="20240912 11:46:32.329" endtime="20240912 11:46:32.330"/>
+</kw>
 <kw name="Get Data By Id From Sheets" library="rby-excel">
 <var>${result}</var>
 <arg>${excel_file}</arg>
 <arg>${DESKRIPSI}</arg>
 <arg>${TCID}</arg>
-<arg>${SHEET_NAMES.split(',')}</arg>
-<msg timestamp="20240906 20:49:54.211" level="INFO">${result} = {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.203" endtime="20240906 20:49:54.213"/>
+<arg>${SHEET_DATA.split(',')}</arg>
+<msg timestamp="20240912 11:46:32.336" level="INFO">${result} = {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
+<status status="PASS" starttime="20240912 11:46:32.330" endtime="20240912 11:46:32.336"/>
 </kw>
 <if>
 <branch type="IF" condition="${result} != None">
 <kw name="Log" library="BuiltIn">
 <arg>Data Found: ${result}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.213" level="INFO">Data Found: {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.213"/>
+<msg timestamp="20240912 11:46:32.337" level="INFO">Data Found: {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
+<status status="PASS" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.337"/>
 </kw>
 <return>
 <value>${result}</value>
-<status status="PASS" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.213"/>
+<status status="PASS" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.337"/>
 </return>
-<status status="PASS" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.213"/>
+<status status="PASS" starttime="20240912 11:46:32.336" endtime="20240912 11:46:32.337"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Data Not Found</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.214"/>
+<status status="NOT RUN" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.337"/>
 </kw>
 <return>
 <value>Data Not Found</value>
-<status status="NOT RUN" starttime="20240906 20:49:54.214" endtime="20240906 20:49:54.214"/>
+<status status="NOT RUN" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.337"/>
 </return>
-<status status="NOT RUN" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.214"/>
+<status status="NOT RUN" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.337"/>
 </branch>
-<status status="PASS" starttime="20240906 20:49:54.213" endtime="20240906 20:49:54.214"/>
+<status status="PASS" starttime="20240912 11:46:32.336" endtime="20240912 11:46:32.337"/>
 </if>
-<msg timestamp="20240906 20:49:54.214" level="INFO">${DATA} = {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.203" endtime="20240906 20:49:54.214"/>
+<msg timestamp="20240912 11:46:32.337" level="INFO">${DATA} = {'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
+<status status="PASS" starttime="20240912 11:46:32.328" endtime="20240912 11:46:32.337"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${DATA}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.215" level="INFO">{'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.214" endtime="20240906 20:49:54.215"/>
+<msg timestamp="20240912 11:46:32.338" level="INFO">{'TEST ID': 'TC001', 'DESKRIPSI': 'personal information', 'NAME': 'Jhoni', 'AGE': 24, 'ADDRESS': 'Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta'}</msg>
+<status status="PASS" starttime="20240912 11:46:32.337" endtime="20240912 11:46:32.338"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${TESTID}</var>
 <arg>${DATA['TEST ID']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.215" level="INFO">${TESTID} = TC001</msg>
-<status status="PASS" starttime="20240906 20:49:54.215" endtime="20240906 20:49:54.215"/>
+<msg timestamp="20240912 11:46:32.338" level="INFO">${TESTID} = TC001</msg>
+<status status="PASS" starttime="20240912 11:46:32.338" endtime="20240912 11:46:32.338"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${DESKRIPSI}</var>
 <arg>${DATA['DESKRIPSI']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.215" level="INFO">${DESKRIPSI} = personal information</msg>
-<status status="PASS" starttime="20240906 20:49:54.215" endtime="20240906 20:49:54.215"/>
+<msg timestamp="20240912 11:46:32.338" level="INFO">${DESKRIPSI} = personal information</msg>
+<status status="PASS" starttime="20240912 11:46:32.338" endtime="20240912 11:46:32.338"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${NAME}</var>
 <arg>${DATA['NAME']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.216" level="INFO">${NAME} = Jhoni</msg>
-<status status="PASS" starttime="20240906 20:49:54.215" endtime="20240906 20:49:54.216"/>
+<msg timestamp="20240912 11:46:32.338" level="INFO">${NAME} = Jhoni</msg>
+<status status="PASS" starttime="20240912 11:46:32.338" endtime="20240912 11:46:32.339"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${AGE}</var>
 <arg>${DATA['AGE']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.216" level="INFO">${AGE} = 24</msg>
-<status status="PASS" starttime="20240906 20:49:54.216" endtime="20240906 20:49:54.216"/>
+<msg timestamp="20240912 11:46:32.339" level="INFO">${AGE} = 24</msg>
+<status status="PASS" starttime="20240912 11:46:32.339" endtime="20240912 11:46:32.339"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${ADDRESS}</var>
 <arg>${DATA['ADDRESS']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.216" level="INFO">${ADDRESS} = Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta</msg>
-<status status="PASS" starttime="20240906 20:49:54.216" endtime="20240906 20:49:54.216"/>
+<msg timestamp="20240912 11:46:32.339" level="INFO">${ADDRESS} = Jl Puri Mutiara I 241 Kompl Aduma Niaga,  Dki Jakarta</msg>
+<status status="PASS" starttime="20240912 11:46:32.339" endtime="20240912 11:46:32.339"/>
 </kw>
-<status status="PASS" starttime="20240906 20:49:54.203" endtime="20240906 20:49:54.216"/>
+<status status="PASS" starttime="20240912 11:46:32.328" endtime="20240912 11:46:32.339"/>
 </kw>
-<status status="PASS" starttime="20240906 20:49:54.203" endtime="20240906 20:49:54.217"/>
+<status status="PASS" starttime="20240912 11:46:32.328" endtime="20240912 11:46:32.339"/>
 </test>
-<test id="s1-t2" name="TC002 - GET DATA TESTING" line="10">
-<kw name="GET DATA TEST 1" library="fungsional_1">
-<arg>personal information fail 1</arg>
-<arg>TC002</arg>
-<kw name="CALL DATA" library="GetData">
-<var>${DATA}</var>
-<arg>${DESKRIPSI}</arg>
-<arg>${TCID}</arg>
-<arg>${SHEET_NAMES}</arg>
-<kw name="Get Data By Id From Sheets" library="rby-excel">
-<var>${result}</var>
-<arg>${excel_file}</arg>
-<arg>${DESKRIPSI}</arg>
-<arg>${TCID}</arg>
-<arg>${SHEET_NAMES.split(',')}</arg>
-<msg timestamp="20240906 20:49:54.227" level="INFO">${result} = {'TEST ID': 'TC002', 'DESKRIPSI': 'personal information fail 1', 'NAME': 'Lowed', 'AGE': 60, 'ADDRESS': 'Jl Kapuas 21, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.218" endtime="20240906 20:49:54.227"/>
-</kw>
-<if>
-<branch type="IF" condition="${result} != None">
-<kw name="Log" library="BuiltIn">
-<arg>Data Found: ${result}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.227" level="INFO">Data Found: {'TEST ID': 'TC002', 'DESKRIPSI': 'personal information fail 1', 'NAME': 'Lowed', 'AGE': 60, 'ADDRESS': 'Jl Kapuas 21, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.227" endtime="20240906 20:49:54.227"/>
-</kw>
-<return>
-<value>${result}</value>
-<status status="PASS" starttime="20240906 20:49:54.227" endtime="20240906 20:49:54.227"/>
-</return>
-<status status="PASS" starttime="20240906 20:49:54.227" endtime="20240906 20:49:54.227"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Data Not Found</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240906 20:49:54.228" endtime="20240906 20:49:54.228"/>
-</kw>
-<return>
-<value>Data Not Found</value>
-<status status="NOT RUN" starttime="20240906 20:49:54.228" endtime="20240906 20:49:54.228"/>
-</return>
-<status status="NOT RUN" starttime="20240906 20:49:54.228" endtime="20240906 20:49:54.228"/>
-</branch>
-<status status="PASS" starttime="20240906 20:49:54.227" endtime="20240906 20:49:54.228"/>
-</if>
-<msg timestamp="20240906 20:49:54.228" level="INFO">${DATA} = {'TEST ID': 'TC002', 'DESKRIPSI': 'personal information fail 1', 'NAME': 'Lowed', 'AGE': 60, 'ADDRESS': 'Jl Kapuas 21, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.218" endtime="20240906 20:49:54.228"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${DATA}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.228" level="INFO">{'TEST ID': 'TC002', 'DESKRIPSI': 'personal information fail 1', 'NAME': 'Lowed', 'AGE': 60, 'ADDRESS': 'Jl Kapuas 21, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.228" endtime="20240906 20:49:54.228"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${TESTID}</var>
-<arg>${DATA['TEST ID']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.228" level="INFO">${TESTID} = TC002</msg>
-<status status="PASS" starttime="20240906 20:49:54.228" endtime="20240906 20:49:54.229"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${DESKRIPSI}</var>
-<arg>${DATA['DESKRIPSI']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.231" level="INFO">${DESKRIPSI} = personal information fail 1</msg>
-<status status="PASS" starttime="20240906 20:49:54.229" endtime="20240906 20:49:54.231"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${NAME}</var>
-<arg>${DATA['NAME']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.231" level="INFO">${NAME} = Lowed</msg>
-<status status="PASS" starttime="20240906 20:49:54.231" endtime="20240906 20:49:54.231"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${AGE}</var>
-<arg>${DATA['AGE']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.232" level="INFO">${AGE} = 60</msg>
-<status status="PASS" starttime="20240906 20:49:54.231" endtime="20240906 20:49:54.232"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${ADDRESS}</var>
-<arg>${DATA['ADDRESS']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.232" level="INFO">${ADDRESS} = Jl Kapuas 21, Dki Jakarta</msg>
-<status status="PASS" starttime="20240906 20:49:54.232" endtime="20240906 20:49:54.232"/>
-</kw>
-<status status="PASS" starttime="20240906 20:49:54.217" endtime="20240906 20:49:54.232"/>
-</kw>
-<status status="PASS" starttime="20240906 20:49:54.217" endtime="20240906 20:49:54.232"/>
-</test>
-<test id="s1-t3" name="TC003 - GET DATA TESTING" line="11">
-<kw name="GET DATA TEST 1" library="fungsional_1">
-<arg>personal information fail 2</arg>
-<arg>TC003</arg>
-<kw name="CALL DATA" library="GetData">
-<var>${DATA}</var>
-<arg>${DESKRIPSI}</arg>
-<arg>${TCID}</arg>
-<arg>${SHEET_NAMES}</arg>
-<kw name="Get Data By Id From Sheets" library="rby-excel">
-<var>${result}</var>
-<arg>${excel_file}</arg>
-<arg>${DESKRIPSI}</arg>
-<arg>${TCID}</arg>
-<arg>${SHEET_NAMES.split(',')}</arg>
-<msg timestamp="20240906 20:49:54.250" level="INFO">${result} = {'TEST ID': 'TC003', 'DESKRIPSI': 'personal information fail 2', 'NAME': 'Asep', 'AGE': 12, 'ADDRESS': 'Jl MPR I/16, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.241" endtime="20240906 20:49:54.250"/>
-</kw>
-<if>
-<branch type="IF" condition="${result} != None">
-<kw name="Log" library="BuiltIn">
-<arg>Data Found: ${result}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.250" level="INFO">Data Found: {'TEST ID': 'TC003', 'DESKRIPSI': 'personal information fail 2', 'NAME': 'Asep', 'AGE': 12, 'ADDRESS': 'Jl MPR I/16, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.250" endtime="20240906 20:49:54.250"/>
-</kw>
-<return>
-<value>${result}</value>
-<status status="PASS" starttime="20240906 20:49:54.250" endtime="20240906 20:49:54.251"/>
-</return>
-<status status="PASS" starttime="20240906 20:49:54.250" endtime="20240906 20:49:54.251"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Data Not Found</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240906 20:49:54.251" endtime="20240906 20:49:54.251"/>
-</kw>
-<return>
-<value>Data Not Found</value>
-<status status="NOT RUN" starttime="20240906 20:49:54.251" endtime="20240906 20:49:54.251"/>
-</return>
-<status status="NOT RUN" starttime="20240906 20:49:54.251" endtime="20240906 20:49:54.251"/>
-</branch>
-<status status="PASS" starttime="20240906 20:49:54.250" endtime="20240906 20:49:54.251"/>
-</if>
-<msg timestamp="20240906 20:49:54.251" level="INFO">${DATA} = {'TEST ID': 'TC003', 'DESKRIPSI': 'personal information fail 2', 'NAME': 'Asep', 'AGE': 12, 'ADDRESS': 'Jl MPR I/16, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.241" endtime="20240906 20:49:54.251"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${DATA}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240906 20:49:54.251" level="INFO">{'TEST ID': 'TC003', 'DESKRIPSI': 'personal information fail 2', 'NAME': 'Asep', 'AGE': 12, 'ADDRESS': 'Jl MPR I/16, Dki Jakarta'}</msg>
-<status status="PASS" starttime="20240906 20:49:54.251" endtime="20240906 20:49:54.251"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${TESTID}</var>
-<arg>${DATA['TEST ID']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.252" level="INFO">${TESTID} = TC003</msg>
-<status status="PASS" starttime="20240906 20:49:54.251" endtime="20240906 20:49:54.252"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${DESKRIPSI}</var>
-<arg>${DATA['DESKRIPSI']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.252" level="INFO">${DESKRIPSI} = personal information fail 2</msg>
-<status status="PASS" starttime="20240906 20:49:54.252" endtime="20240906 20:49:54.252"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${NAME}</var>
-<arg>${DATA['NAME']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.252" level="INFO">${NAME} = Asep</msg>
-<status status="PASS" starttime="20240906 20:49:54.252" endtime="20240906 20:49:54.252"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${AGE}</var>
-<arg>${DATA['AGE']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.253" level="INFO">${AGE} = 12</msg>
-<status status="PASS" starttime="20240906 20:49:54.252" endtime="20240906 20:49:54.253"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${ADDRESS}</var>
-<arg>${DATA['ADDRESS']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20240906 20:49:54.254" level="INFO">${ADDRESS} = Jl MPR I/16, Dki Jakarta</msg>
-<status status="PASS" starttime="20240906 20:49:54.253" endtime="20240906 20:49:54.254"/>
-</kw>
-<status status="PASS" starttime="20240906 20:49:54.241" endtime="20240906 20:49:54.254"/>
-</kw>
-<status status="PASS" starttime="20240906 20:49:54.241" endtime="20240906 20:49:54.254"/>
-</test>
-<status status="PASS" starttime="20240906 20:49:53.893" endtime="20240906 20:49:54.255"/>
+<status status="PASS" starttime="20240912 11:46:31.763" endtime="20240912 11:46:32.340"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Test 1">Test 1</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test 1">Test 1</stat>
 </suite>
 </statistics>
 <errors>

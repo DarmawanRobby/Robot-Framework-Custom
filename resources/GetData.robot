@@ -11,11 +11,12 @@ ${SHEET_NAMES}      Data_1, Data_2
 *** Keywords ***
 CALL DATA
     [Arguments]    ${DESKRIPSI}    ${TCID}    ${SHEET_DATA}=${None}
+    Log    GET DATA FROM : ${SHEET_DATA}
     ${result}    get_data_by_id_from_sheets
     ...    ${excel_file}
     ...    ${DESKRIPSI}
     ...    ${TCID}
-    ...    ${SHEET_NAMES.split(',')}
+    ...    ${SHEET_DATA.split(',')}
 
     IF    ${result} != None 
         Log    Data Found: ${result}
